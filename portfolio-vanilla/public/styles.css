@@ -2,6 +2,11 @@ body {
   font-family: "IBM Plex Mono", monospace;
   background-color: #eee;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  height: 100vh;
+  line-height: 1.8;
 }
 
 a {
@@ -65,10 +70,11 @@ button:hover {
 .massive {
   font-size: 6rem;
   font-weight: 700;
+  line-height: 1;
 }
 
 .light {
-  font-size: 5rem;
+  font-size: 3rem;
   font-weight: 600;
   color: #555;
 }
@@ -77,6 +83,48 @@ button:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 2rem;
+  flex-grow: 1;
+  overflow-y: auto;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.space {
+  height: 5rem;
+}
+
+.hero {
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+  position: fixed;
+  position: relative;
+  align-items: center;
+  width: 3rem;
+  overflow: hidden;
+}
+
+.socials a:last-of-type {
+  padding-bottom: 5rem;
+}
+
+.socials a {
+  display: block;
+  height: 1rem;
+}
+
+.socials .pinstripe {
+  height: 2px;
+  position: absolute;
+  bottom: -996rem;
+  height: 1000rem;
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;
 }
