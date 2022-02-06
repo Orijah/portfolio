@@ -2,11 +2,15 @@ body {
   font-family: "IBM Plex Mono", monospace;
   background-color: #eee;
   color: #333;
+  line-height: 1.8;
+  position: relative;
+}
+
+.viewport {
   display: flex;
   flex-direction: column;
   margin: 0;
   height: 100vh;
-  line-height: 1.8;
 }
 
 a {
@@ -105,9 +109,10 @@ button:hover {
   font-size: 1.5rem;
   padding: 1rem;
   position: fixed;
-  position: relative;
   align-items: center;
   width: 3rem;
+  left: 0;
+  bottom: 0;
   overflow: hidden;
 }
 
