@@ -1,32 +1,82 @@
 body {
   font-family: "IBM Plex Mono", monospace;
-  background-color: #0a192f;
-  color: white;
+  background-color: #eee;
+  color: #333;
 }
 
 a {
-  color: #8892b0
+  color: #333;
+  text-decoration: none;
 }
 
 button {
   background-color: none;
-  border: 2px solid #64ffda;
-  padding: 10px;
-  border-radius: 5px;
+  border: 2px solid #111;
+  padding: 1rem 2rem;
+  color: #111;
+  transition: background-color 400ms ease;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #33333333;
 }
 
 .navbar {
   display: flex;
   list-style: none;
-  padding: 10px;
-  justify-content: right; /*position for flex display*/
+  padding: 1rem;
   align-items: center; /*for flex items*/
+  font-weight: 600;
 }
 
 .navbar a {
-  padding: 10px;
+  margin-right: 2rem;
 }
 
 .navbar a:hover {
+  color: #333;
+}
+
+.navbar span {
+  font-weight: 400;
+  color: #777;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 3rem;
+  margin: 1rem;
+}
+
+.highlight {
   color: #64ffda;
+}
+
+.sans {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.massive {
+  font-size: 6rem;
+  font-weight: 700;
+}
+
+.light {
+  font-size: 5rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
