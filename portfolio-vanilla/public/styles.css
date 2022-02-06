@@ -24,9 +24,19 @@ button {
 }
 
 .navbar a {
-  padding: 10px;
+  padding: 1rem;
 }
 
 .navbar a:hover {
   color: #64ffda;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  position: fixed;
+  align-items: center;
+  bottom: 0;
+  left: 0;
 }
