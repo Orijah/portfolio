@@ -2,6 +2,7 @@ body {
   font-family: "IBM Plex Mono", monospace;
   background-color: #0a192f;
   color: white;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -18,12 +19,30 @@ button {
 button:hover {
 }
 
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10rem;
+  border: 10rem;
+  padding: 10rem;
+}
+
+.main {
+  height: 800px;
+  background-color: none;
+  border: 3rem;
+  gap: 10rem;
+}
+
 .navbar {
   display: flex;
   list-style: none;
   padding: 10px;
-  justify-content: right; /*position for flex display*/
-  align-items: center; /*for flex items*/
+  transition: color 0.5s;
+  justify-content: right;
+  align-items: center;
 }
 
 .navbar a {
@@ -32,12 +51,7 @@ button:hover {
 
 .navbar a:hover {
   color: #64ffda;
-}
-
-.page {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+  transition: color 0.5s;
 }
 
 .socials {
@@ -61,10 +75,13 @@ button:hover {
 .socials a {
   display: block;
   height: 0.7rem;
+  transition: color 0.5s;
 }
 
 .socials a:hover {
   color: #64ffda;
+  transition: ease-in;
+  transition: color 0.5s;
 }
 
 .socials .pinstripe_upper {
@@ -82,4 +99,17 @@ button:hover {
   height: 1000rem;
   border-left: 1px solid #8892b0;
   border-right: 1px solid #8892b0;
+}
+
+.massive {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #8892b0;
+}
+
+.light {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #797d8b;
 }
