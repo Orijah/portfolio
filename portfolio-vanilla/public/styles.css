@@ -24,16 +24,20 @@ p {
 }
 
 button {
-  background-color: none;
   border: 2px solid #111;
   padding: 1rem 2rem;
   color: #111;
-  transition: background-color 400ms ease;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #2a2b2b33;
+button,
+.socials {
+  transition: background-color 100ms ease;
+}
+
+button:hover,
+.socials:hover {
+  background-color: #bed5ff;
 }
 
 .navbar {
@@ -46,15 +50,39 @@ button:hover {
 
 .navbar a {
   margin-right: 2rem;
+  font-weight: 400;
+  color: #5a616e;
 }
 
 .navbar a:hover {
   color: #2a2b2b;
 }
 
-.navbar span {
-  font-weight: 400;
-  color: #5a616e;
+.navbar a span {
+  font-weight: 600;
+  color: #2a2b2b;
+  position: relative;
+}
+
+.navbar a span::after {
+  content: " ";
+  display: block;
+  height: 2px;
+  width: 0%;
+  position: absolute;
+  bottom: -0.2rem;
+  left: -0.5rem;
+  right: 0;
+  background: #2a2b2b;
+  opacity: 0;
+  transition: width 100ms ease-in, left 100ms ease-in, opacity 100ms ease-in;
+}
+
+.navbar .active span::after,
+.navbar span:hover::after {
+  width: 100%;
+  left: 0;
+  opacity: 1;
 }
 
 .topbar {
@@ -64,8 +92,8 @@ button:hover {
 }
 
 .logo {
-  font-size: 3rem;
-  margin: 1rem;
+  font-size: 3.1rem;
+  margin: 0 1rem;
 }
 
 .highlight {
@@ -104,37 +132,23 @@ button:hover {
   height: 12vh;
 }
 
-.hero {
-}
-
 .socials {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  font-size: 1.5rem;
-  padding: 1rem;
+  font-size: 1.1rem;
   position: fixed;
   align-items: center;
   width: 3rem;
-  left: 0;
-  bottom: 0;
-  overflow: hidden;
+  left: 1rem;
+  padding: 0.5rem 0;
+  bottom: 2rem;
+  border: 2px solid #5a616e;
 }
 
-.socials a:last-of-type {
-  padding-bottom: 5rem;
+.socials i {
+  color: #2a2b2b;
 }
 
-.socials a {
-  display: block;
-  height: 1rem;
-}
-
-.socials .pinstripe {
-  height: 2px;
-  position: absolute;
-  bottom: -996rem;
-  height: 1000rem;
-  border-left: 1px solid #2a2b2b;
-  border-right: 1px solid #2a2b2b;
+.pinstripe {
+  display: none;
 }
