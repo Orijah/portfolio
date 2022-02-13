@@ -1,0 +1,11 @@
+.topbar
+  .logo 👨🏻‍💻
+  ul.navbar
+    each page in pages
+      li.collapse(class=activePage === page.id ? "active" : "")
+        a.collapse(href='/' + page.id)
+          span #{page.name}
+    li
+      button
+        i.fas.fa-download
+        |  Resume

@@ -1,0 +1,154 @@
+body {
+  font-family: "IBM Plex Mono", monospace;
+  background-color: #ebeef2;
+  color: #2a2b2b;
+  line-height: 1.8;
+  position: relative;
+}
+
+.viewport {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+a {
+  color: #2a2b2b;
+  text-decoration: none;
+}
+
+p {
+  color: #5a616e;
+}
+
+button {
+  border: 2px solid #111;
+  padding: 12px 1.5rem;
+  color: #111;
+  cursor: pointer;
+}
+
+button,
+.socials {
+  transition: background-color 100ms ease;
+}
+
+button:hover,
+.socials:hover {
+  background-color: #ffe5ad;
+}
+
+.navbar {
+  display: flex;
+  list-style: none;
+  padding: 1rem;
+  align-items: center; /*for flex items*/
+  font-weight: 600;
+}
+
+.navbar a {
+  margin-right: 2rem;
+  font-weight: 400;
+  color: #5a616e;
+}
+
+.navbar a:hover {
+  color: #2a2b2b;
+}
+
+.navbar a span {
+  font-weight: 600;
+  color: #2a2b2b;
+  position: relative;
+}
+
+.navbar a span::after {
+  content: " ";
+  display: block;
+  height: 2px;
+  width: 0%;
+  position: absolute;
+  bottom: -0.2rem;
+  left: -0.5rem;
+  right: 0;
+  background: #2a2b2b;
+  opacity: 0;
+  transition: width 100ms ease-in, left 100ms ease-in, opacity 100ms ease-in;
+}
+
+.navbar .active span::after,
+.navbar span:hover::after {
+  width: 100%;
+  left: 0;
+  opacity: 1;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 3rem;
+  margin: 0 1rem;
+}
+
+.highlight {
+  color: #64ffda;
+}
+
+.sans {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.massive {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #2a2b2b;
+}
+
+.light {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #5a616e;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-grow: 1;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.space {
+  height: 12vh;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1rem;
+  position: fixed;
+  align-items: center;
+  width: 3rem;
+  left: 1rem;
+  padding: 0.5rem 0;
+  bottom: 1rem;
+  outline: 2px solid #5a616e;
+}
+
+.socials i {
+  color: #2a2b2b;
+}
+
+.pinstripe {
+  display: none;
+}
