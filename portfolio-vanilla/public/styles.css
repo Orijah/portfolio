@@ -1,6 +1,6 @@
 body {
   font-family: "IBM Plex Mono", monospace;
-  background-color: #7a7b80;
+  background-color: #F2F2F2;
   color: black;
   scroll-behavior: smooth;
 }
@@ -37,31 +37,29 @@ a {
   justify-content: center;
   align-items: center;
   font-size: 1rem;
-  background-color: #606164;
+  background-color: #B9B8BF;
 }
 
 .navbar a {
   padding: 1rem;
-  background-color: #606164;
-  color: #FFF;
+  background-color: #B9B8BF;
+  color: black;
   border-radius: 0px;
   padding: 18px 36px;
   display: inline-block;
   font-family: "Lucida Console", Monaco, monospace;
   font-size: 14px;
+  cursor:pointer;
   letter-spacing: 1px;
-  cursor: pointer;
-  box-shadow: inset 0 0 0 0 #606164;
+  box-shadow: inset 0 0 0 0 #B9B8BF;
   -webkit-transition: ease-out 0.4s;
   -moz-transition: ease-out 0.4s;
   transition: ease-out 0.4s;
 }
 
 .navbar a:hover {
-  /* color: #8c9aaa;
-  background-color: #4e4e4e;
-  transition: color 0.5s linear; */
-  box-shadow: inset 0 100px 0 0 #3392ff;
+  box-shadow: inset 0 100px 0 0 #453659;
+  color: #B9B8BF;
 }
 
 .socials {
@@ -89,7 +87,7 @@ a {
 }
 
 .socials a:hover {
-  color: #a1a8b1;
+  color: #453659;
   transition: ease-in;
   transition: color 0.5s;
 }
