@@ -28,6 +28,7 @@ a {
 
 .hero {
   width: 1000px;
+  padding: 3rem;
 }
 
 .navbar {
@@ -82,14 +83,11 @@ a {
 
 .socials a {
   display: block;
-  height: 0.7rem;
-  transition: color 0.5s;
+  height: 1rem;
 }
 
 .socials a:hover {
-  color: #453659;
-  transition: ease-in;
-  transition: color 0.5s;
+  font-size: 1.2rem;
 }
 
 .socials .pinstripe_upper {
@@ -109,7 +107,7 @@ a {
 .pinstripe_right {
   display: flex;
   width: 0rem;
-  height: 12rem;
+  height: 13rem;
   border-left: 1px solid black;
   border-right: 1px solid black;
   position: absolute;
