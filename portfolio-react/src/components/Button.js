@@ -4,6 +4,7 @@ import gs from "../utils/gs";
 import Text from "./Text";
 
 const ButtonTag = styled.button`
+  font-weight: normal;
   display: flex;
   outline: ${gs(1 / 4)} solid ${(p) => p.theme.normal};
   padding: ${gs()};
@@ -27,7 +28,7 @@ const ButtonTag = styled.button`
 export default function Button(props) {
   return (
     <ButtonTag>
-      <Text size={props.size} as="span" color="strong">
+      <Text sans size={props.size} as="span" weight={500} color="strong">
         {props.children}
       </Text>
     </ButtonTag>

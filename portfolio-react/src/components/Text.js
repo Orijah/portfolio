@@ -10,14 +10,14 @@ const Text = styled.p((props) => {
 
   return {
     color: props.theme[props.color || "normal"],
-    fontWeight: props.weight,
+    fontWeight: props.bold ? "bold" : props.weight,
     textAlign: props.align,
     fontFamily: props.sans
       ? '"IBM Plex Sans", sans-serif, "OpenMoji Color", "Apple Color Emoji"'
       : '"IBM Plex Mono", monospace, "OpenMoji Color", "Apple Color Emoji"',
     ...createStyleObject({
       capHeight: pxSize,
-      lineGap: Math.floor(pxSize * 1.4),
+      lineGap: Math.floor(pxSize * (props.tight ? 0.5 : 1.4)),
       fontMetrics: props.sans ? fontMetricsSans : fontMetricsMono,
     }),
   };

@@ -15,13 +15,13 @@ const Underline = styled.span`
   width: 0%;
   position: absolute;
   bottom: -${gs(1)};
-  left: -12px;
+  left: -24px;
   right: 0;
   background-color: ${(p) => p.theme.normal};
   opacity: 0;
   transition: width ${(p) => p.theme.timings.quick} ease-in,
     left ${(p) => p.theme.timings.quick} ease-in,
-    opacity ${(p) => p.theme.timings.quick} ease-in;
+    opacity ${(p) => p.theme.timings.quick} cubic-bezier(0.7, 0, 0.84, 0);
   ${(props) => (props.active ? activeCss : "")}
 `;
 
@@ -43,7 +43,7 @@ export default function NavLink(props) {
 
   return (
     <LinkTag as={active ? "p" : "a"} href={active ? undefined : props.href}>
-      <Text color="strong" weight="bold">
+      <Text color="strong" weight={500} sans>
         {props.children}
       </Text>
       <Underline active={active} />

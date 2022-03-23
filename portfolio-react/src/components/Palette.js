@@ -71,13 +71,13 @@ export default function Palette(props) {
         </Popover>
         <Popover text="hi@felixsebastian.dev">
           <Item as="a" target="_blank" href="mailto:hi@felixsebastian.dev">
-            <Icon icon="envelope" />
+            <Icon icon="paper-plane" />
           </Item>
         </Popover>
       </Section>
       <Section>
         <Popover
-          text={props.highContrast ? "Beautiful theme" : "High contrast theme"}
+          text={props.highContrast ? "Colourful mode" : "High contrast mode"}
         >
           <Item as="button" onClick={props.handleHighContrast}>
             <Icon

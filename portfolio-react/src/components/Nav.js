@@ -24,7 +24,8 @@ export default function Nav(props) {
       ))}
       <li>
         <Button>
-          <Icon icon="file-pdf" /> Resume
+          <Icon icon="file-pdf" />
+          &nbsp;&nbsp;&nbsp;Resume
         </Button>
       </li>
     </NavBar>

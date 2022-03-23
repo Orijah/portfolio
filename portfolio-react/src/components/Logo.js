@@ -6,5 +6,5 @@ const Container = styled.div`
 `;
 
 export default function Logo() {
-  return <Container>{"\uD83E\uDDD1\uD83C\uDFFB\u200D\uD83D\uDCBB"}</Container>;
+  return <Container>{"\uD83D\uDC68\uD83C\uDFFB\u200D\uD83D\uDCBB"}</Container>;
 }

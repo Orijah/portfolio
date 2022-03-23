@@ -1,9 +1,9 @@
 import BasicPage from "../components/BasicPage";
 
-export default function Projects() {
+export default function FavTech() {
   return (
     <BasicPage>
-      <p>no projects :(</p>
+      <p>no fav tech :(</p>
     </BasicPage>
   );
 }

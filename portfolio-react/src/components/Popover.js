@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { usePopper } from "react-popper";
 import gs from "../utils/gs";
+import Text from "./Text";
 
 const Thing = styled.p`
   color: ${(p) => p.theme.strong};
@@ -17,7 +18,7 @@ const Thing = styled.p`
 
 const Wrapper = styled.div`
   position: relative;
-  &:hover > ${Thing} {
+  &:hover > ${Thing}, &:focus-within ${Thing} {
     visibility: visible;
   }
 `;
@@ -44,7 +45,7 @@ export default function Popover(props) {
           {...attributes.popper}
           ref={setpopoverElementRef}
         >
-          <p>{props.text}</p>
+          <Text weight={500}>{props.text}</Text>
         </Thing>
       </Wrapper>
     </>
