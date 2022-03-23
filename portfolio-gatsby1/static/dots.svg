@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="6" height="6" viewBox="0 0 12 12" xml:space="preserve">
+  <defs>
+  </defs>
+  <g transform="matrix(1 0 0 1 12 0)">
+    <path style="stroke-width: 0; fill: #0000aa; fill-rule: nonzero; opacity: 1;" transform=" translate(-3, -3)" d="M 3 0 C 4.656 0 6 1.344 6 3 C 6 4.656 4.656 6 3 6 C 1.344 6 0 4.656 0 3 C 0 1.344 1.344 0 3 0 z" />
+  </g>
+  <g transform="matrix(1 0 0 1 0 0)">
+    <path style="stroke-width: 0; fill: #0000aa; fill-rule: nonzero; opacity: 1;" transform=" translate(-3, -3)" d="M 3 0 C 4.656 0 6 1.344 6 3 C 6 4.656 4.656 6 3 6 C 1.344 6 0 4.656 0 3 C 0 1.344 1.344 0 3 0 z" />
+  </g>
+  <g transform="matrix(1 0 0 1 0 12)">
+    <path style="stroke-width: 0; fill: #0000aa; fill-rule: nonzero; opacity: 1;" transform=" translate(-3, -3)" d="M 3 0 C 4.656 0 6 1.344 6 3 C 6 4.656 4.656 6 3 6 C 1.344 6 0 4.656 0 3 C 0 1.344 1.344 0 3 0 z" />
+  </g>
+  <g transform="matrix(1 0 0 1 12 12)">
+    <path style="stroke-width: 0; fill: #0000aa; fill-rule: nonzero; opacity: 1;" transform=" translate(-3, -3)" d="M 3 0 C 4.656 0 6 1.344 6 3 C 6 4.656 4.656 6 3 6 C 1.344 6 0 4.656 0 3 C 0 1.344 1.344 0 3 0 z" />
+  </g>
+  <g transform="matrix(1 0 0 1 6 6)">
+    <path style="stroke-width: 0; fill: #0000aa; fill-rule: nonzero; opacity: 1;" transform=" translate(-3, -3)" d="M 3 0 C 4.656 0 6 1.344 6 3 C 6 4.656 4.656 6 3 6 C 1.344 6 0 4.656 0 3 C 0 1.344 1.344 0 3 0 z" />
+  </g>
+</svg>
