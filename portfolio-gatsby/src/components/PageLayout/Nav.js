@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../Button";
+import LinkButton from "../LinkButton";
 import NavLink from "./NavLink";
 import Icon from "../Icon";
 import { css } from "@emotion/react";
@@ -29,10 +29,10 @@ const Nav = (props) => (
       </li>
     ))}
     <li>
-      <Button>
+      <LinkButton url="/Felix_Sebastian_Software_Engineer.pdf" download>
         <Icon icon="file-pdf" />
         &nbsp;&nbsp;&nbsp;Resume
-      </Button>
+      </LinkButton>
     </li>
   </ul>
 );

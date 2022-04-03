@@ -105,9 +105,11 @@ const Experience = () => {
                 </DotPoint>
                 <DotPoint>
                   Utilising tech such as Ruby on Rails, React, MongoDB, Apache
-                  Kafka, AWS, Buildkite, Docker. Working with event-driven
-                  microservices architecture and event-sourced data storage
-                  patterns.
+                  Kafka, AWS, Buildkite, Docker.
+                </DotPoint>
+                <DotPoint>
+                  Working with event-driven microservices architecture and
+                  event-sourced data storage patterns.
                 </DotPoint>
                 <DotPoint>
                   Participating in discovery work, project planning, sprint
@@ -130,8 +132,11 @@ const Experience = () => {
                 </DotPoint>
                 <DotPoint>
                   Utilising tech such as Ruby on Rails, React, GraphQL, MySQL,
-                  Elasticsearch, AWS, Cypress, Buildkite, Docker. Participating
-                  in sprint planning, code reviews and pair programming.
+                  Elasticsearch, AWS, Cypress, Buildkite, Docker.
+                </DotPoint>
+                <DotPoint>
+                  Participating in sprint planning, code reviews and pair
+                  programming.
                 </DotPoint>
                 <DotPoint>
                   Contributing to ActivePipe's custom design system bringing
@@ -155,8 +160,11 @@ const Experience = () => {
                 </DotPoint>
                 <DotPoint>
                   Utilising tech such as Ruby on Rails, React, React Native,
-                  GraphQL, PostgreSQL, AWS, CircleCI, Docker. Participating in
-                  sprint planning, code reviews and pair programming.
+                  GraphQL, PostgreSQL, AWS, CircleCI, Docker.
+                </DotPoint>
+                <DotPoint>
+                  Participating in sprint planning, code reviews and pair
+                  programming.
                 </DotPoint>
                 <DotPoint>
                   Participating in product design, solution design and

@@ -4,11 +4,11 @@ import { css, useTheme } from "@emotion/react";
 import gs from "../utils/gs";
 import Text from "./Text";
 
-const Button = (props) => {
+const LinkButton = (props) => {
   const theme = useTheme();
 
   return (
-    <button
+    <a
       css={css`
         position: relative;
         font-weight: normal;
@@ -17,6 +17,7 @@ const Button = (props) => {
         padding: ${gs()};
         cursor: pointer;
         transition: background-color ${theme.timings.quick} ease;
+        text-decoration: none;
         &:hover {
           background: ${theme.hover};
         }
@@ -30,7 +31,8 @@ const Button = (props) => {
           ${focusOutlineCss(theme.focus)}
         }
       `}
-      onClick={() => props.handleClick()}
+      href={props.url}
+      download={props.download}
     >
       <Text
         css={css`
@@ -44,8 +46,8 @@ const Button = (props) => {
       >
         {props.children}
       </Text>
-    </button>
+    </a>
   );
 };
 
-export default Button;
+export default LinkButton;

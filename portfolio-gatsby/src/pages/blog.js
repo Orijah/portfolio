@@ -5,6 +5,25 @@ import Stack from "../components/Stack";
 import Text from "../components/Text";
 import Icon from "../components/Icon";
 import Link from "../components/Link";
+import gs from "../utils/gs";
+import { css } from "@emotion/react";
+
+const SideLink = (props) => (
+  <Link href={props.url} target="_blank">
+    <div
+      css={css`
+        display: flex;
+        align-items: center;
+        gap: ${gs(1)};
+      `}
+    >
+      {props.children}
+      <Text size={0}>
+        <Icon icon="arrow-up-right-from-square" />
+      </Text>
+    </div>
+  </Link>
+);
 
 const BookPost = (props) => (
   <Stack>
@@ -20,9 +39,11 @@ const BookPost = (props) => (
 
 const PaperPost = (props) => (
   <Stack>
-    <Text bold sans tight color="strong" size={6}>
-      <Icon icon="file-lines" /> {props.title}
-    </Text>
+    <SideLink {...props}>
+      <Text bold sans tight color="strong" size={6}>
+        <Icon icon="file-lines" /> {props.title}
+      </Text>
+    </SideLink>
     <Text weight={500} sans color="weak" size={4}>
       {props.author} ({props.year})
     </Text>
@@ -32,11 +53,11 @@ const PaperPost = (props) => (
 
 const BlogPost = (props) => (
   <Stack>
-    <Link href={props.url} target="_blank">
+    <SideLink {...props}>
       <Text bold sans tight color="strong" size={6}>
         <Icon icon="pen-clip" /> {props.title}
       </Text>
-    </Link>
+    </SideLink>
     <Text weight={500} sans color="weak" size={4}>
       {props.author} ({props.year})
     </Text>
@@ -71,73 +92,79 @@ const IndexPage = () => {
             title="A Philosophy of Software Design"
             author="John Ousterhout"
             year="2018"
-            comments="Still reading"
+            comments="Still reading this, very interesting so far."
           />
           <BlogPost
             title="The TypeScript Tax"
             author="Eric Elliot"
             year="2019"
             url="https://medium.com/javascript-scene/the-typescript-tax-132ff4cb175b"
-            comments="Very nice"
+            comments="Very nice analysis that supports many of my intuitions about TypeScript."
           />
           <BookPost
-            title="Domain Driven Design"
+            title="Domain-Driven Design"
             author="Eric Evans"
             year="2003"
-            comments="I enjoy Evans' writing a lot, it's very clear. I think the ideas discussed in this book are most suitable for programmers writing code for very high stakes applications, where it's crucial to get things right. For most apps, this approach is overkill"
+            comments="Evans' idea of ubiquitous language seems like a formalisation of what's normally left to developers intuition and common sense. While this might be useful in some high stakes settings where domain experts are available, and has led to the discovery of other important concepts, my feeling is that it's probably unhelpful for most projects. I love how clearly Evans writes and still got a lot out of the book."
+          />
+          <BookPost
+            title="Domain-Driven Design Distilled"
+            author="Vaughn Vernon"
+            year="2016"
+            comments="I didn't enjoy this author nearly as much as Evans, but it was the perfect introduction to the topic."
           />
           <PaperPost
-            title="Static Typing Where Possible, Dynamic Typing When Needed: The End of the Cold War Between Programming Languages"
+            title="Static Typing Where Possible, Dynamic Typing When Needed"
             author="Eric Meijer, Peter Drayton"
             year="2004"
             url="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.69.5966&rep=rep1&type=pdf"
-            comments="Love it"
+            comments="Thankfully TypeScript affords us this flexibility."
           />
           <BookPost
             title="Clean Architecture"
             author="Robert Martin"
             year="2017"
-            comments="Uncle bob is showing his age, but still some great ideas in this book"
+            comments="Despite being published more recently than Clean Code, this book already feels less relevant. It seems like a lot of assumptions are made about programming and compilation, that probably make more sense in the Java world. Still, some solid ideas and worth the read."
           />
           <YouTubePost
             title="Scrum et al."
             id="IyNPeTn8fpo"
-            description="This video explains why scrum works"
+            description="I'm surprised how often people miss the point of scrum, they should watch this."
           />
           <BookPost
             title="The Phoenix Project"
             author="Gene Kim, Kevin Behr, and George Spafford"
             year="2013"
-            comments="Very interesting"
+            comments="Very interesting."
           />
           <BookPost
             title="Continuous discovery habits"
             author="Teresa Torres"
             year="1999"
-            comments="I enjoy Evans' writing a lot, it's very clear. I think the ideas discussed in this book are most suitable for programmers writing code for very high stakes applications, where it's crucial to get things right. For most apps, this approach is overkill"
+            comments="I thought I had discovery, design and delivery stuff figured out but Torres totally opened my eyes to new ways of thinking about it. Some of this book was not super relevant to me as a programmer, but worth reading and skipping a chapter here or there."
           />
           <BookPost
             title="Clean Code"
             author="Robert Martin"
             year="2008"
-            comments="Uncle bob is showing his age, but still some great ideas in this book"
+            comments="Bob Martin's long list of rules mostly aligned with my prior intuitions about programming. I've always advocated small functions and been wary of redundant, weasely naming. I feel slightly validated. Maybe a lot of it is common sense, but it's nice to have it all in one document that can be the basis of coding standards."
           />
           <BookPost
             title="Head First Design Patterns"
             author="Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra"
             year="2004"
-            comments="Fantastic intro to design patterns"
+            comments="Fun, palatable intro to OOP design patterns."
           />
           <BookPost
             title="The Pragmatic Programmer"
             author="Andy Hunt, Dave Thomas"
             year="1999"
-            comments="Invaluable book to read for programmers"
+            comments="An absolute must-read for any programmer."
           />
           <YouTubePost
             title="The Secret of Simple Code"
             id="F-JvvFlYcts"
-            description="Love this clip of Eric Elliot discussing the art of abstraction"
+            description="Love this clip from Eric Elliot discussing the importance of abstraction."
           />
         </Stack>
       </BasicPage>
