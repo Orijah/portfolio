@@ -1,10 +1,12 @@
 import logo from "./logo.svg";
 import "./App.css";
+import SideBar from "./components/SideBar";
 
 function App() {
   return (
     <>
-      <div>Test</div>
+      <div className="text-center">Test</div>
+      <SideBar></SideBar>
     </>
   );
 }
