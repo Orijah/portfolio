@@ -1,15 +1,22 @@
-const SideBarIcon = ({ icon, text = "tooltip" }) => {
+export const SideBarIcon = ({
+  icon,
+  text = "",
+  link = "https://www.google.com/",
+}) => {
   return (
-    <div className="sidebar-icon">
-      {icon}
-
-      <span className="sidebar-tooltip">{text}</span>
-    </div>
+    <a href={link}>
+      <div className="sidebar-icon group">
+        {icon}
+        <span className="sidebar-tooltip group-hover:scale-100">{text}</span>
+      </div>
+    </a>
   );
 };
 
-const NavBarIcon = ({ icon }) => {
-  return <div className="navbar-icon">{icon}</div>;
+export const NavBarIcon = ({ text }) => {
+  return (
+    <>
+      <div className="navbar-icon">{text}</div>
+    </>
+  );
 };
-
-export default SideBarIcon;
