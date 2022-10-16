@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const SideBarIcon = ({
   icon,
   text = "",
@@ -13,10 +15,10 @@ export const SideBarIcon = ({
   );
 };
 
-export const NavBarIcon = ({ text }) => {
+export const NavBarIcon = ({ text, to }) => {
   return (
-    <>
-      <div className="navbar-icon">{text}</div>
-    </>
+    <div className="navbar-icon">
+      <Link to={to}>{text}</Link>
+    </div>
   );
 };

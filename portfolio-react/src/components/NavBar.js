@@ -4,18 +4,10 @@ import { Outlet, Link } from "react-router-dom";
 const NavBar = ({ pages }) => {
   return (
     <nav className="nav">
-      <Link to="about">
-        <NavBarIcon text="About"></NavBarIcon>
-      </Link>
-      <Link to="experience">
-        <NavBarIcon text="Experience"></NavBarIcon>
-      </Link>
-      <Link to="projects">
-        <NavBarIcon text="Projects"></NavBarIcon>
-      </Link>
-      <Link to="blog">
-        <NavBarIcon text="Blog"></NavBarIcon>
-      </Link>
+      <NavBarIcon text="About" to="about"></NavBarIcon>
+      <NavBarIcon text="Experience" to="experience"></NavBarIcon>
+      <NavBarIcon text="Projects" to="projects"></NavBarIcon>
+      <NavBarIcon text="Blog" to="blog"></NavBarIcon>
       <div className="resume">Resume</div>
       <Outlet></Outlet>
     </nav>
