@@ -1,0 +1,36 @@
+[
+  {
+    "organisation": "Orica Digital Solutions",
+    "positions": [
+      {
+        "title": "Sensior Electronics Engineer",
+        "start": "January 2022",
+        "end": null,
+        "roles": [""]
+      }
+    ]
+  },
+  {
+    "organisation": "RIG Technologies International",
+    "positions": [
+      {
+        "title": "Sensior Electronics Engineer",
+        "start": "February 2021",
+        "end": "January 2022",
+        "roles": [""]
+      },
+      {
+        "title": "Electronics Engineer",
+        "start": "November 2021",
+        "end": "February 2022",
+        "roles": [""]
+      },
+      {
+        "title": "Graduate Electrical Engineer",
+        "start": "January 2020",
+        "end": "November 2021",
+        "roles": [""]
+      }
+    ]
+  }
+]
