@@ -29,15 +29,18 @@ body {
     rounded-xl  hover:border-slate-800 transition-all duration-300 ease-in;
   }
 
-  .resume {
-    @apply relative flex top-0 right-0 items-center justify-center p-2 px-10 m-2 bg-white;
-  }
-
   .nav {
     @apply relative top-0 right-0 w-screen h-16 p-1 flex flex-row justify-end bg-slate-100;
   }
 
-  .container {
-    @apply text-center w-screen pl-40 p-1;
+  .body {
+    @apply flex justify-center flex-row grow mx-auto w-2/3
+  }
+
+  .organisation {
+    @apply h-auto max-w-4xl m-4 p-2 shadow-lg bg-white text-slate-800 rounded-lg
+  }
+
+  .position {
   }
 }

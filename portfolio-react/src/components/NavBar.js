@@ -8,7 +8,7 @@ const NavBar = ({ pages }) => {
       <NavBarIcon text="Experience" to="experience"></NavBarIcon>
       <NavBarIcon text="Projects" to="projects"></NavBarIcon>
       <NavBarIcon text="Blog" to="blog"></NavBarIcon>
-      <div className="resume">Resume</div>
+      <NavBarIcon text="Resume"></NavBarIcon>
       <Outlet></Outlet>
     </nav>
   );

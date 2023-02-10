@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
 import SideBar from "./components/SideBar";
+import Body from "./components/Body";
 
 import experience from "./data/experience.json";
 
@@ -11,8 +12,7 @@ function App() {
   return (
     <>
       <NavBar></NavBar>
-      <SideBar></SideBar>
-      <main className="container">
+      <Body>
         <Routes>
           <Route path="about" element={<Pages.About />}></Route>
           <Route
@@ -22,7 +22,8 @@ function App() {
           <Route path="projects" element={<Pages.Projects />}></Route>
           <Route path="blog" element={<Pages.Blog />}></Route>
         </Routes>
-      </main>
+      </Body>
+      <SideBar></SideBar>
     </>
   );
 }
