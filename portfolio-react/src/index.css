@@ -38,7 +38,7 @@ body {
   }
 
   .organisation {
-    @apply h-auto max-w-4xl m-4 p-2 shadow-lg bg-white text-slate-800 rounded-lg
+    @apply w-auto m-4 p-2 shadow-lg bg-white text-slate-800 rounded-lg
   }
 
   .position {

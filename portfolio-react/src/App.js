@@ -12,17 +12,15 @@ function App() {
   return (
     <>
       <NavBar></NavBar>
-      <Body>
-        <Routes>
-          <Route path="about" element={<Pages.About />}></Route>
-          <Route
-            path="experience"
-            element={<Pages.Experience exp={experience}></Pages.Experience>}
-          ></Route>
-          <Route path="projects" element={<Pages.Projects />}></Route>
-          <Route path="blog" element={<Pages.Blog />}></Route>
-        </Routes>
-      </Body>
+      <Routes>
+        <Route path="about" element={<Pages.About />}></Route>
+        <Route
+          path="experience"
+          element={<Pages.Experience exp={experience}></Pages.Experience>}
+        ></Route>
+        <Route path="projects" element={<Pages.Projects />}></Route>
+        <Route path="blog" element={<Pages.Blog />}></Route>
+      </Routes>
       <SideBar></SideBar>
     </>
   );

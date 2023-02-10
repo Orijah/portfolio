@@ -1,6 +1,8 @@
+import Body from "../components/Body";
+
 const Blog = ({ props }) => {
   return (
-    <>
+    <Body>
       <div>
         This page and the contents are still a work in progress.
         <div>
@@ -9,7 +11,7 @@ const Blog = ({ props }) => {
           <div>Watch this space.</div>
         </div>
       </div>
-    </>
+    </Body>
   );
 };
 

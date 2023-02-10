@@ -1,35 +1,38 @@
 import React from "react";
 
+import Body from "../components/Body";
+
 const Experience = ({ exp, ...props }) => {
   console.log(exp);
   return (
-    <>
-      {exp.map((org, index) => (
-        <Organisation org={org} key={index}></Organisation>
-      ))}
-    </>
+    <Body>
+      <div>
+        {exp.map((org, index) => (
+          <Organisation org={org} key={index}></Organisation>
+        ))}
+      </div>
+    </Body>
   );
 };
 
 const Organisation = ({ org, ...props }) => {
-  console.log(org.organisation);
   return (
-    <>
-      <div>This is an org</div>
+    <div className="organisation">
+      <div>{org.organisation}</div>
       <>
         {org.positions.map((pos, index) => (
           <Position position={pos} key={index}></Position>
         ))}
       </>
-    </>
+    </div>
   );
 };
 
 const Position = ({ position, ...props }) => {
   return (
-    <>
+    <div className="position">
       <div>{position.title}</div>
-    </>
+    </div>
   );
 };
 
