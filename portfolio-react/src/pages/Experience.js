@@ -1,24 +1,20 @@
 import React from "react";
 
-import Body from "../components/Body";
-
 const Experience = ({ exp, ...props }) => {
   console.log(exp);
   return (
-    <Body>
-      <div>
-        {exp.map((org, index) => (
-          <Organisation org={org} key={index}></Organisation>
-        ))}
-      </div>
-    </Body>
+    <div className="experience">
+      {exp.map((org, index) => (
+        <Organisation org={org} key={index}></Organisation>
+      ))}
+    </div>
   );
 };
 
 const Organisation = ({ org, ...props }) => {
   return (
     <div className="organisation">
-      <div>{org.organisation}</div>
+      <div className="h-10 font-bold text-xl">{org.organisation}</div>
       <>
         {org.positions.map((pos, index) => (
           <Position position={pos} key={index}></Position>
@@ -29,9 +25,15 @@ const Organisation = ({ org, ...props }) => {
 };
 
 const Position = ({ position, ...props }) => {
+  if (position.end == null) {
+    position.end = "Present";
+  }
   return (
     <div className="position">
       <div>{position.title}</div>
+      <div className="w-30 mx-2 text-sm">
+        {position.start} - {position.end}
+      </div>
     </div>
   );
 };

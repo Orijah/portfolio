@@ -17,8 +17,10 @@ export const SideBarIcon = ({
 
 export const NavBarIcon = ({ text, to }) => {
   return (
-    <div className="navbar-icon">
-      <Link to={to}>{text}</Link>
-    </div>
+    <>
+      <Link className="navbar-icon" to={to}>
+        {text}
+      </Link>
+    </>
   );
 };
