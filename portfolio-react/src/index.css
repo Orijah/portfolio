@@ -42,9 +42,10 @@ body {
   }
 
   .organisation {
-    @apply w-auto m-4 p-2 shadow-lg bg-white text-slate-800 rounded-lg
+    @apply w-auto m-4 p-2 pt-8 pl-8 shadow-lg bg-white text-slate-800 rounded-lg
   }
 
   .position {
+    @apply mb-10
   }
 }

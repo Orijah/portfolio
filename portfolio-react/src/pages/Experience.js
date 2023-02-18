@@ -30,22 +30,20 @@ const Position = ({ position, ...props }) => {
   }
   return (
     <div className="position">
-      <div>{position.title}</div>
-      <div className="w-30 mx-2 text-sm">
+      <div className="text-lg">{position.title}</div>
+      <div className="mx-2 text-sm">
         {position.start} - {position.end}
+      </div>
+      <div className="m-2"></div>
+      <div className="text-sm">
+        {position.roles.map((role, index) => {
+          if (role !== "") {
+            return <li className="list-item ml-10">{role}</li>;
+          }
+        })}
       </div>
     </div>
   );
 };
-
-// company
-//    position 1
-//    position 2
-//    position 3
-
-// position:
-// start/end
-// role
-// responsibilities -> list of dot points
 
 export default Experience;
