@@ -34,7 +34,7 @@ body {
   }
 
   .body {
-    @apply flex justify-center flex-row grow mx-auto w-2/3
+    @apply flex justify-center flex-row items-center grow mx-auto w-2/3 p-10 m-10 mt-20
   }
 
   .experience{
