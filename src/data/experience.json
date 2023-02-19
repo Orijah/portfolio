@@ -1,0 +1,59 @@
+[
+  {
+    "organisation": "Orica Digital Solutions",
+    "link": "",
+    "positions": [
+      {
+        "title": "Senior Electronics Engineer",
+        "start": "Jan 2022",
+        "end": null,
+        "roles": [
+          "Developed pulsed-neutron gamma logging tools in the mining sector",
+          "High-level concept design applying stakeholder requirements",
+          "Improved performance of particle detection processing software by over a factor of 10",
+          "General purpose application software using C and Python"
+        ]
+      }
+    ]
+  },
+  {
+    "organisation": "RIG Technologies International",
+    "link": "",
+    "positions": [
+      {
+        "title": "Senior Electronics Engineer",
+        "start": "Nov 2021",
+        "end": "Jan 2022",
+        "roles": [""]
+      },
+      {
+        "title": "Electronics Engineer",
+        "start": "Nov 2021",
+        "end": "Feb 2022",
+        "roles": [
+          "Development prototype of live-streaming logging while drilling tools",
+          "Designing modular electronics using Ethernet, high-speed eMMC",
+          ""
+        ]
+      },
+      {
+        "title": "Graduate Electrical Engineer",
+        "start": "Jan 2020",
+        "end": "Nov 2021",
+        "roles": ["", "Electronics testing", ""]
+      }
+    ]
+  },
+  {
+    "organisation": "Qteq",
+    "link": "",
+    "positions": [
+      {
+        "title": "Manufacturing Technician",
+        "start": "Oct 2017",
+        "end": "Apr 2019",
+        "roles": [""]
+      }
+    ]
+  }
+]
