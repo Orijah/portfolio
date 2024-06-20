@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown to HTML</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                renderActions: {
+                    addMenu: [0, '', '']
+                }
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+
+</head>
+
+<body>
+    <div id="markdown-content"></div>
+    <script>
+        async function fetchAndRenderMarkdown() {
+        try {
+            const response = await fetch('./posts/procedural-terrain.md');
+            const markdown = await response.text();
+            document.getElementById('markdown-content').innerHTML = marked.parse(markdown);
+            MathJax.typesetPromise().then(() => {
+                console.log("MathJax typeset complete");
+            });
+            
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        } catch (error) {
+            console.error("Error rendering markdown: ", error);
+        }
+    }
+    fetchAndRenderMarkdown();
+    </script>
+</body>
+
+</html>
