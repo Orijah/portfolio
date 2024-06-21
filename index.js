@@ -10,7 +10,7 @@ const postFiles = [
 ];
 
 const PostList = ({ onCardClick }) => html`
-    <div id="post-list">
+    <div class="post-list">
         ${postFiles.map(post => html`
             <div class="card" onClick=${() => onCardClick(post.filename)}>
                 <h2>${post.title}</h2>
@@ -30,9 +30,9 @@ const Post = ({ filename, onBackClick }) => {
     }, [filename]);
 
     return html`
-    <div id="post">
+    <div class="post">
         <button onClick=${onBackClick}>Back</button>
-        <div id="post-content">
+        <div class="post-content">
             <!-- <div dangerouslySetInnerHTML=${{ __html: marked.parse(content) }}/> -->
              <!-- <div innerHTML=${marked.parse(content)}/> -->
              <${MarkdownViewer} markdown=${content} />
