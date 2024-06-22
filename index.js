@@ -79,14 +79,34 @@ const MarkdownViewer = ({ markdown }) => {
 //     `;
 // };
 
+const ThemeSwitcher = () => {
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    document.body.className = "";
+    document.body.classList.add(`${theme}-mode`);
+  }, [theme]);
+
+  return html`
+      <button class="theme-button" onClick=${() => setTheme(theme === "light" ? "dark" : "light")}>
+        ${theme === "light" && html`<i class="fas fa-sun"></i>`}
+        ${theme === "dark" && html`<i class="fas fa-moon"></i>`}
+      </button>
+  `;
+};
+
 const App = () => {
   return html`
     <div>
-        <nav>navbar</nav>
-        <div>about</div>
-		<div></div>
-        <div>sidebar</div>
-        <footer>footer</footer>
+      <nav class="navbar">
+        <div>home</div>
+        <div>experience</div>
+        <div>blog</div>
+        <${ThemeSwitcher}/>
+      </nav>
+      <div>about</div>
+      <div>sidebar</div>
+      <footer>footer</footer>
     </div>
   `;
 };

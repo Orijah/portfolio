@@ -46,8 +46,49 @@ body {
   }
    */
 
+body {
+  transition: background-color 0.5s, color 0.5s;
+}
+
+body.light-mode {
+  background-color: #fff;
+  color: #000;
+}
+
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+body.light-mode * {
+  color: #333;
+  transition: color 0.5s, color 0.5s;
+}
+
+body.dark-mode * {
+  color: #fff;
+  transition: color 0.5s, color 0.5s;
+}
+
+
 .post-content img {
   width: 100%;
   max-width: 800px;
   max-height: auto;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.navbar > * {
+  max-width: 30rem;
+  padding: 0.5rem;
+}
+
+.theme-button {
+  border: none;
+  background-color: transparent;
 }
