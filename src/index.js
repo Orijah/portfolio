@@ -33,7 +33,7 @@ const Post = ({ filename, onBackClick }) => {
 
 	return html`
     <div class="post">
-      <button onClick=${onBackClick}>Back</button>
+      <button onClick=${onBackClick}><i class="fa-solid fa-angle-left"></i> back</button>
       <div class="post-content">
         <!-- <div dangerouslySetInnerHTML=${{
 			__html: marked.parse(content),
@@ -75,22 +75,19 @@ const ThemeSwitcher = () => {
 	}, [theme]);
 
 	return html`
-    <button
-      class="theme-button"
-      onClick=${() => setTheme(theme === "light" ? "dark" : "light")}
-    >
+    <button onClick=${() => setTheme(theme === "light" ? "dark" : "light")}>
       ${theme === "light" && html`<i class="fas fa-sun"></i>`}
       ${theme === "dark" && html`<i class="fas fa-moon"></i>`}
-    </button>
+</button>
   `;
 };
 
 const Home = () => {
-	return html`<div>HOME</div>`
+	return html`<div>HOME</div>`;
 };
 
 const Experience = () => {
-	return html`<div>EXP</div>	`
+	return html`<div>EXP</div> `;
 };
 
 const Blog = () => {
@@ -113,26 +110,26 @@ const App = () => {
 
 	const renderContent = () => {
 		switch (content) {
-			case 'home':
-				return html`<${Home}/>`;
-			case 'experience':
-				return html`<${Experience}/>`;
-			case 'blog':
-				return html`<${Blog}/>`;
+			case "home":
+				return html`<${Home} />`;
+			case "experience":
+				return html`<${Experience} />`;
+			case "blog":
+				return html`<${Blog} />`;
 			default:
-				return html`<${Home}/>`;
+				return html`<${Home} />`;
 		}
 	};
 
 	return html`
     <div>
       <nav class="navbar">
-        <div onClick=${() => setContent("home")}>home</div>
-        <div onClick=${() => setContent("experience")}>experience</div>
-        <div onClick=${() => setContent("blog")}>blog</div>
+        <button onClick=${() => setContent("home")}>home</button>
+        <button onClick=${() => setContent("experience")}>experience</button>
+        <button onClick=${() => setContent("blog")}>blog</button>
         <${ThemeSwitcher} />
       </nav>
-	  <div>${renderContent()}</div>
+      <div>${renderContent()}</div>
       <div>sidebar</div>
       <footer>footer</footer>
     </div>
