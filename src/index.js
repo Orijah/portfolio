@@ -33,7 +33,9 @@ const Post = ({ filename, onBackClick }) => {
 
   return html`
     <div class="post">
-      <button onClick=${onBackClick}>Back</button>
+      <button onClick=${onBackClick}>
+        <i class="fa-solid fa-angle-left"></i> back
+      </button>
       <div class="post-content">
         <!-- <div dangerouslySetInnerHTML=${{
           __html: marked.parse(content),
@@ -49,7 +51,7 @@ const MarkdownViewer = ({ markdown }) => {
   const ref = useRef(null);
 
   useEffect(() => {
-    if (ref.current) {
+    if (ref.current && markdown) {
       ref.current.innerHTML = window.marked.parse(markdown, {
         highlight: (code, lang) => {
           return hljs.highlightAuto(code, [lang]).value;
@@ -66,18 +68,22 @@ const MarkdownViewer = ({ markdown }) => {
   return html`<div ref=${ref}></div>`;
 };
 
-// const App = () => {
-//     const [selectedPost, setSelectedPost] = useState(null);
+const RenderMarkdownFile = ({ file }) => {
+  const [content, setContent] = useState("");
 
-//     return html`
-//         <div>
-//             ${selectedPost ?
-//             html`<${Post} filename=${selectedPost} onBackClick=${() => setSelectedPost(null)} />` :
-//             html`<${PostList} onCardClick=${setSelectedPost} />`
-//         }
-//         </div>
-//     `;
-// };
+  useEffect(() => {
+    fetch(`${file}`)
+      .then((response) => response.text())
+      .then((text) => setContent(text))
+      .catch((error) => console.error("Error loading post:", error));
+  }, [file]);
+
+  return html`
+    <div>
+      <${MarkdownViewer} markdown=${content} />
+    </div>
+  `;
+};
 
 const ThemeSwitcher = () => {
   const [theme, setTheme] = useState("light");
@@ -88,23 +94,67 @@ const ThemeSwitcher = () => {
   }, [theme]);
 
   return html`
-      <button class="theme-button" onClick=${() => setTheme(theme === "light" ? "dark" : "light")}>
-        ${theme === "light" && html`<i class="fas fa-sun"></i>`}
-        ${theme === "dark" && html`<i class="fas fa-moon"></i>`}
-      </button>
+    <button onClick=${() => setTheme(theme === "light" ? "dark" : "light")}>
+      ${theme === "dark" && html`<i class="fas fa-sun"></i>`}
+      ${theme === "light" && html`<i class="fas fa-moon"></i>`}
+    </button>
+  `;
+};
+
+const Home = () => {
+  return html`<div>
+    <div>HOME</div>
+    <${RenderMarkdownFile} file=${"./resources/about.md"} />
+  </div> `;
+};
+
+const Experience = () => {
+	return html`<div>
+	  <div>HOME</div>
+	  <${RenderMarkdownFile} file=${"./resources/experience.md"} />
+	</div> `;
+  };
+
+const Blog = () => {
+  const [selectedPost, setSelectedPost] = useState(null);
+
+  return html`
+    <div>
+      ${selectedPost
+        ? html`<${Post}
+            filename=${selectedPost}
+            onBackClick=${() => setSelectedPost(null)}
+          />`
+        : html`<${PostList} onCardClick=${setSelectedPost} />`}
+    </div>
   `;
 };
 
 const App = () => {
+  const [content, setContent] = useState("home");
+
+  const renderContent = () => {
+    switch (content) {
+      case "home":
+        return html`<${Home} />`;
+      case "experience":
+        return html`<${Experience} />`;
+      case "blog":
+        return html`<${Blog} />`;
+      default:
+        return html`<${Home} />`;
+    }
+  };
+
   return html`
     <div>
       <nav class="navbar">
-        <div>home</div>
-        <div>experience</div>
-        <div>blog</div>
-        <${ThemeSwitcher}/>
+        <button onClick=${() => setContent("home")}>home</button>
+        <button onClick=${() => setContent("experience")}>experience</button>
+        <button onClick=${() => setContent("blog")}>blog</button>
+        <${ThemeSwitcher} />
       </nav>
-      <div>about</div>
+      <div>${renderContent()}</div>
       <div>sidebar</div>
       <footer>footer</footer>
     </div>
