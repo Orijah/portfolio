@@ -44,7 +44,7 @@ const MarkdownViewer = ({ markdown }) => {
   const ref = useRef(null);
 
   useEffect(() => {
-    if (ref.current) {
+    if (ref.current && markdown) {
       ref.current.innerHTML = window.marked.parse(markdown, {
         highlight: (code, lang) => {
           return hljs.highlightAuto(code, [lang]).value;

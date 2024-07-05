@@ -7,6 +7,7 @@ const html = htm.bind(h);
 const postFiles = [
   { filename: "game-art-test.md", title: "Game Art Test" },
   { filename: "procedural-terrain.md", title: "Procedural Terrain" },
+  { filename: "portfolio-website.md", title: "Portfolio Website" },
 ];
 
 const PostList = ({ onCardClick }) => html`
