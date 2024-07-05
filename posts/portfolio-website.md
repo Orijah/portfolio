@@ -12,8 +12,8 @@ To begin with, I started looking at options for static site generators. With a s
 
 ```html
 <script type="module">
-  import { h, render } from 'https://esm.sh/preact';
-  import htm from 'https://esm.sh/htm';
+  import { h, render } from "https://esm.sh/preact";
+  import htm from "https://esm.sh/htm";
 
   // Single-import Preact version:
   // import { html, render } from 'https://esm.sh/htm/preact/standalone'
@@ -21,7 +21,7 @@ To begin with, I started looking at options for static site generators. With a s
   // Initialize htm with Preact
   const html = htm.bind(h);
 
-  function App (props) {
+  function App(props) {
     return html`<h1>Hello ${props.name}!</h1>`;
   }
 
