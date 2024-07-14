@@ -150,9 +150,9 @@ const App = () => {
   return html`
     <div>
       <nav class="navbar">
-        <button onClick=${() => setContent("home")}>home</button>
-        <button onClick=${() => setContent("experience")}>experience</button>
-        <button onClick=${() => setContent("blog")}>blog</button>
+        <button class="navbar-icon" onClick=${() => setContent("home")}>home</button>
+        <button class="navbar-icon" onClick=${() => setContent("experience")}>experience</button>
+        <button class="navbar-icon" onClick=${() => setContent("blog")}>blog</button>
         <${ThemeSwitcher} />
       </nav>
       <div>${renderContent()}</div>
