@@ -151,6 +151,11 @@ const App = () => {
     }
   };
 
+  const handleContentSet = (content) => {
+    setContent(content);
+    setSelectedPost(null);
+  }
+
   return html`
     <div>
       <nav class="navbar">
@@ -165,13 +170,13 @@ const App = () => {
             `
           : html``}
         <div class="navbar-spacer"></div>
-        <button class="navbar-icon" onClick=${() => setContent("home")}>
+        <button class="navbar-icon" onClick=${() => handleContentSet("home")}>
           Home
         </button>
-        <button class="navbar-icon" onClick=${() => setContent("experience")}>
+        <button class="navbar-icon" onClick=${() => handleContentSet("experience")}>
           Experience
         </button>
-        <button class="navbar-icon" onClick=${() => setContent("blog")}>
+        <button class="navbar-icon" onClick=${() => handleContentSet("blog")}>
           Blog
         </button>
         <${ThemeSwitcher} />
