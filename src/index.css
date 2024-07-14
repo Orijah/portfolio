@@ -47,7 +47,7 @@ body a:hover {
   right: 0;
 }
 
-.navbar > * {
+.navbar>* {
   max-width: 30rem;
   max-height: 40px;
   max-width: 100px;
@@ -77,6 +77,10 @@ body.dark-mode .navbar {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   border-radius: 0.75rem;
+}
+
+.navbar-spacer {
+  flex: 1;
 }
 
 body.light-mode .navbar-icon {
@@ -122,19 +126,45 @@ body.dark-mode .hljs:hover {
   opacity: 0.9;
 }
 
-
-
 .theme-button {
   border: none;
   background-color: transparent;
 }
 
-button, input[type="submit"], input[type="reset"] {
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.md-content {
+  margin: 1rem;
+  width: auto;
+  padding: 1rem;
+  padding-top: 0.1rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  color: #000;
+  border-radius: 0.5rem;
+}
+
+.post-card {
+  margin: 1rem;
+  width: auto;
+  padding: 1rem;
+  padding-top: 0.1rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  color: #000;
+  border-radius: 0.5rem;
+}
+
+.spacer {
+  height: 2rem;
 }

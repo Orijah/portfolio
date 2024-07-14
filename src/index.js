@@ -11,18 +11,19 @@ const postFiles = [
 ];
 
 const PostList = ({ onCardClick }) => html`
-  <div class="post-list">
+  <div>
     ${postFiles.map(
-      (post) => html`
-        <div class="card" onClick=${() => onCardClick(post.filename)}>
-          <h2>${post.title}</h2>
-        </div>
-      `
+      (post) => html` <div
+        class="post-card"
+        onClick=${() => onCardClick(post.filename)}
+      >
+        <h2>${post.title}</h2>
+      </div>`
     )}
   </div>
 `;
 
-const Post = ({ filename, onBackClick }) => {
+const Post = ({ filename }) => {
   const [content, setContent] = useState("");
 
   useEffect(() => {
@@ -34,9 +35,6 @@ const Post = ({ filename, onBackClick }) => {
 
   return html`
     <div class="post">
-      <button onClick=${onBackClick}>
-        <i class="fa-solid fa-angle-left"></i> back
-      </button>
       <div class="post-content">
         <!-- <div dangerouslySetInnerHTML=${{
           __html: marked.parse(content),
@@ -66,7 +64,7 @@ const MarkdownViewer = ({ markdown }) => {
     }
   }, [markdown]);
 
-  return html`<div ref=${ref}></div>`;
+  return html`<div class="md-content" ref=${ref}></div>`;
 };
 
 const RenderMarkdownFile = ({ file }) => {
@@ -104,44 +102,50 @@ const ThemeSwitcher = () => {
 
 const Home = () => {
   return html`<div>
-    <div>HOME</div>
     <${RenderMarkdownFile} file=${"./resources/about.md"} />
   </div> `;
 };
 
 const Experience = () => {
-	return html`<div>
-	  <div>HOME</div>
-	  <${RenderMarkdownFile} file=${"./resources/experience.md"} />
-	</div> `;
-  };
+  return html`<div>
+    <${RenderMarkdownFile} file=${"./resources/experience.md"} />
+  </div>`;
+};
 
-const Blog = () => {
+const Blog = ({ onPostSelect }) => {
   const [selectedPost, setSelectedPost] = useState(null);
+
+  const handleCardClick = (filename) => {
+    setSelectedPost(filename);
+    onPostSelect(filename);
+  };
 
   return html`
     <div>
-      ${selectedPost
-        ? html`<${Post}
-            filename=${selectedPost}
-            onBackClick=${() => setSelectedPost(null)}
-          />`
-        : html`<${PostList} onCardClick=${setSelectedPost} />`}
+      <${PostList} onCardClick=${handleCardClick} />
     </div>
   `;
 };
 
 const App = () => {
   const [content, setContent] = useState("home");
+  const [selectedPost, setSelectedPost] = useState(null);
 
   const renderContent = () => {
+    if (selectedPost) {
+      return html`<${Post}
+        filename=${selectedPost}
+        onBackClick=${() => setSelectedPost(null)}
+      />`;
+    }
+
     switch (content) {
       case "home":
         return html`<${Home} />`;
       case "experience":
         return html`<${Experience} />`;
       case "blog":
-        return html`<${Blog} />`;
+        return html`<${Blog} onPostSelect=${setSelectedPost} />`;
       default:
         return html`<${Home} />`;
     }
@@ -150,11 +154,29 @@ const App = () => {
   return html`
     <div>
       <nav class="navbar">
-        <button class="navbar-icon" onClick=${() => setContent("home")}>home</button>
-        <button class="navbar-icon" onClick=${() => setContent("experience")}>experience</button>
-        <button class="navbar-icon" onClick=${() => setContent("blog")}>blog</button>
+        ${selectedPost
+          ? html`
+              <button
+                class="post-back-button"
+                onClick=${() => setSelectedPost(null)}
+              >
+                <i class="fa-solid fa-angle-left"></i> Back
+              </button>
+            `
+          : html``}
+        <div class="navbar-spacer"></div>
+        <button class="navbar-icon" onClick=${() => setContent("home")}>
+          Home
+        </button>
+        <button class="navbar-icon" onClick=${() => setContent("experience")}>
+          Experience
+        </button>
+        <button class="navbar-icon" onClick=${() => setContent("blog")}>
+          Blog
+        </button>
         <${ThemeSwitcher} />
       </nav>
+      <div class="spacer"></div>
       <div>${renderContent()}</div>
       <div>sidebar</div>
       <footer>footer</footer>
