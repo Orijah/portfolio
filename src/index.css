@@ -4,16 +4,16 @@ body {
 
 body.light-mode {
   background-color: #fff;
-  color: #000;
+  color: #282c34;
 }
 
 body.dark-mode {
-  background-color: #000;
+  background-color: #282c34;
   color: #fff;
 }
 
 body.light-mode {
-  color: #000;
+  color: #282c34;
   transition: color 0.5s, color 0.5s;
 }
 
@@ -38,11 +38,11 @@ body a:hover {
 
 body.light-mode .navbar {
   background-color: #fff;
-  color: #000;
+  color: #282c34;
 }
 
 body.dark-mode .navbar {
-  background-color: #000;
+  background-color: #282c34;
   color: #fff;
 }
 
@@ -82,19 +82,19 @@ body.dark-mode .navbar {
 
 body.light-mode .navbar-icon {
   background-color: #fff;
-  color: #000;
+  color: #282c34;
   border: 2px solid #fff;
 }
 
 body.light-mode .navbar-icon:hover {
-  border-color: #000;
+  border-color: #282c34;
   transition: all 0.3s ease-in;
 }
 
 body.dark-mode .navbar-icon {
-  background-color: #000;
+  background-color: #282c34;
   color: #fff;
-  border: 2px solid #000;
+  border: 2px solid #282c34;
 }
 
 body.dark-mode .navbar-icon:hover {
@@ -102,25 +102,10 @@ body.dark-mode .navbar-icon:hover {
   transition: all 0.3s ease-in;
 }
 
-body.light-mode .hljs {
-  background-color: #e0e0e0;
-  color: #202020;
-}
-
-body.dark-mode .hljs {
-  background-color: #202020;
-  color: #e0e0e0;
-}
-
 body.light-mode pre,
 body.dark-mode pre {
   padding: 1rem;
   border-radius: 5px;
-}
-
-body.light-mode .hljs:hover,
-body.dark-mode .hljs:hover {
-  opacity: 0.9;
 }
 
 .theme-button {
@@ -145,21 +130,16 @@ input[type="reset"] {
   width: auto;
   padding: 1rem;
   padding-top: 0.1rem;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  color: #000;
-  border-radius: 0.5rem;
 }
 
-.post-card {
-  margin: 1rem;
-  width: auto;
-  padding: 1rem;
-  padding-top: 0.1rem;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+body.light-mode .md-content {
   background-color: #fff;
-  color: #000;
-  border-radius: 0.5rem;
+  color: #282c34;
+}
+
+body.dark-mode .md-content {
+  background-color: #282c34;
+  color: #fff;
 }
 
 .spacer {

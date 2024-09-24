@@ -14,7 +14,7 @@ const PostList = ({ onCardClick }) => html`
   <div>
     ${postFiles.map(
       (post) => html` <div
-        class="post-card"
+        class="md-content"
         onClick=${() => onCardClick(post.filename)}
       >
         <h2>${post.title}</h2>
@@ -90,6 +90,15 @@ const ThemeSwitcher = () => {
   useEffect(() => {
     document.body.className = "";
     document.body.classList.add(`${theme}-mode`);
+
+    const hljsThemeLink = document.getElementById("hljs-theme");
+    if (hljsThemeLink) {
+      hljsThemeLink.href =
+        theme === "light"
+          ? "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs.min.css"
+          : "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css";
+    }
+
   }, [theme]);
 
   return html`
@@ -154,7 +163,7 @@ const App = () => {
   const handleContentSet = (content) => {
     setContent(content);
     setSelectedPost(null);
-  }
+  };
 
   return html`
     <div>
@@ -173,7 +182,10 @@ const App = () => {
         <button class="navbar-icon" onClick=${() => handleContentSet("home")}>
           Home
         </button>
-        <button class="navbar-icon" onClick=${() => handleContentSet("experience")}>
+        <button
+          class="navbar-icon"
+          onClick=${() => handleContentSet("experience")}
+        >
           Experience
         </button>
         <button class="navbar-icon" onClick=${() => handleContentSet("blog")}>
