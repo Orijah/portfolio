@@ -1,10 +1,9 @@
 body {
-  transition: background-color 0.5s, color 0.5s;
 }
 
 body.light-mode {
   background-color: #fff;
-  color: #282c34;
+  color: #000;
 }
 
 body.dark-mode {
@@ -14,12 +13,10 @@ body.dark-mode {
 
 body.light-mode {
   color: #282c34;
-  transition: color 0.5s, color 0.5s;
 }
 
 body.dark-mode {
   color: #fff;
-  transition: color 0.5s, color 0.5s;
 }
 
 body a {
@@ -38,7 +35,7 @@ body a:hover {
 
 body.light-mode .navbar {
   background-color: #fff;
-  color: #282c34;
+  color: #000;
 }
 
 body.dark-mode .navbar {
@@ -130,16 +127,15 @@ input[type="reset"] {
   width: auto;
   padding: 1rem;
   padding-top: 0.1rem;
+  border-radius: 0.5rem;
 }
 
 body.light-mode .md-content {
-  background-color: #fff;
-  color: #282c34;
+  border: 2px solid #282c34;
 }
 
 body.dark-mode .md-content {
-  background-color: #282c34;
-  color: #fff;
+  border: 2px solid #fff;
 }
 
 .spacer {

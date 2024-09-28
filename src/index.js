@@ -15,6 +15,7 @@ const PostList = ({ onCardClick }) => html`
     ${postFiles.map(
       (post) => html` <div
         class="md-content"
+        style="max-width:50rem"
         onClick=${() => onCardClick(post.filename)}
       >
         <h2>${post.title}</h2>
@@ -58,6 +59,7 @@ const MarkdownViewer = ({ markdown }) => {
       });
 
       window.MathJax.typesetPromise([ref.current]);
+
       document.querySelectorAll("pre code").forEach((block) => {
         window.hljs.highlightElement(block);
       });
