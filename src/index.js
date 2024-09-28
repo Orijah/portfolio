@@ -7,21 +7,24 @@ const html = htm.bind(h);
 const postFiles = [
   { filename: "game-art-test.md", title: "Game Art Test" },
   { filename: "procedural-terrain.md", title: "Procedural Terrain" },
+  { filename: "portfolio-website.md", title: "Portfolio Website" },
 ];
 
 const PostList = ({ onCardClick }) => html`
-  <div class="post-list">
+  <div>
     ${postFiles.map(
-      (post) => html`
-        <div class="card" onClick=${() => onCardClick(post.filename)}>
-          <h2>${post.title}</h2>
-        </div>
-      `
+      (post) => html` <div
+        class="md-content"
+        style="max-width:50rem"
+        onClick=${() => onCardClick(post.filename)}
+      >
+        <h2>${post.title}</h2>
+      </div>`
     )}
   </div>
 `;
 
-const Post = ({ filename, onBackClick }) => {
+const Post = ({ filename }) => {
   const [content, setContent] = useState("");
 
   useEffect(() => {
@@ -33,9 +36,6 @@ const Post = ({ filename, onBackClick }) => {
 
   return html`
     <div class="post">
-      <button onClick=${onBackClick}>
-        <i class="fa-solid fa-angle-left"></i> back
-      </button>
       <div class="post-content">
         <!-- <div dangerouslySetInnerHTML=${{
           __html: marked.parse(content),
@@ -59,13 +59,14 @@ const MarkdownViewer = ({ markdown }) => {
       });
 
       window.MathJax.typesetPromise([ref.current]);
+
       document.querySelectorAll("pre code").forEach((block) => {
         window.hljs.highlightElement(block);
       });
     }
   }, [markdown]);
 
-  return html`<div ref=${ref}></div>`;
+  return html`<div class="md-content" ref=${ref}></div>`;
 };
 
 const RenderMarkdownFile = ({ file }) => {
@@ -91,6 +92,15 @@ const ThemeSwitcher = () => {
   useEffect(() => {
     document.body.className = "";
     document.body.classList.add(`${theme}-mode`);
+
+    const hljsThemeLink = document.getElementById("hljs-theme");
+    if (hljsThemeLink) {
+      hljsThemeLink.href =
+        theme === "light"
+          ? "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs.min.css"
+          : "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css";
+    }
+
   }, [theme]);
 
   return html`
@@ -103,57 +113,89 @@ const ThemeSwitcher = () => {
 
 const Home = () => {
   return html`<div>
-    <div>HOME</div>
     <${RenderMarkdownFile} file=${"./resources/about.md"} />
   </div> `;
 };
 
 const Experience = () => {
-	return html`<div>
-	  <div>HOME</div>
-	  <${RenderMarkdownFile} file=${"./resources/experience.md"} />
-	</div> `;
-  };
+  return html`<div>
+    <${RenderMarkdownFile} file=${"./resources/experience.md"} />
+  </div>`;
+};
 
-const Blog = () => {
+const Blog = ({ onPostSelect }) => {
   const [selectedPost, setSelectedPost] = useState(null);
+
+  const handleCardClick = (filename) => {
+    setSelectedPost(filename);
+    onPostSelect(filename);
+  };
 
   return html`
     <div>
-      ${selectedPost
-        ? html`<${Post}
-            filename=${selectedPost}
-            onBackClick=${() => setSelectedPost(null)}
-          />`
-        : html`<${PostList} onCardClick=${setSelectedPost} />`}
+      <${PostList} onCardClick=${handleCardClick} />
     </div>
   `;
 };
 
 const App = () => {
   const [content, setContent] = useState("home");
+  const [selectedPost, setSelectedPost] = useState(null);
 
   const renderContent = () => {
+    if (selectedPost) {
+      return html`<${Post}
+        filename=${selectedPost}
+        onBackClick=${() => setSelectedPost(null)}
+      />`;
+    }
+
     switch (content) {
       case "home":
         return html`<${Home} />`;
       case "experience":
         return html`<${Experience} />`;
       case "blog":
-        return html`<${Blog} />`;
+        return html`<${Blog} onPostSelect=${setSelectedPost} />`;
       default:
         return html`<${Home} />`;
     }
   };
 
+  const handleContentSet = (content) => {
+    setContent(content);
+    setSelectedPost(null);
+  };
+
   return html`
     <div>
       <nav class="navbar">
-        <button onClick=${() => setContent("home")}>home</button>
-        <button onClick=${() => setContent("experience")}>experience</button>
-        <button onClick=${() => setContent("blog")}>blog</button>
+        ${selectedPost
+          ? html`
+              <button
+                class="post-back-button"
+                onClick=${() => setSelectedPost(null)}
+              >
+                <i class="fa-solid fa-angle-left"></i> Back
+              </button>
+            `
+          : html``}
+        <div class="navbar-spacer"></div>
+        <button class="navbar-icon" onClick=${() => handleContentSet("home")}>
+          Home
+        </button>
+        <button
+          class="navbar-icon"
+          onClick=${() => handleContentSet("experience")}
+        >
+          Experience
+        </button>
+        <button class="navbar-icon" onClick=${() => handleContentSet("blog")}>
+          Blog
+        </button>
         <${ThemeSwitcher} />
       </nav>
+      <div class="spacer"></div>
       <div>${renderContent()}</div>
       <div>sidebar</div>
       <footer>footer</footer>
